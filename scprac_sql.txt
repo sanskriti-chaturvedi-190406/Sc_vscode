@@ -1,0 +1,102 @@
+TABLE1: GAMES
+
+1. Select count(distinct number) from games;
+OUTPUT=> 2
+
+2. Select max(schedule date), min(schedule date) from games order by gcode;
+OUTPUT=> | 12-11-2023 | 07-12-2023 |
+
+3. Select avg(prizemoney) from games;
+OUTPUT=> 11800
+
+4. Select * from games where number=2 orderby gcode descending;
+OUTPUT=> | 105 | CHESS       | 2 | 9000  | 05-12-2023 |
+	 | 102 | BADMINTON   | 2 | 12000 | 14-11-2023 |
+	 | 101 | CAROM BOARD | 2 | 5000  | 12-11-2023 |
+
+5. Select count(gcode) from games where prizemoney > 10000 ;
+OUTPUT=> 3
+
+TABLE2: EMP
+
+1. Create table EMP(
+   EMPNO integer,
+   NAME varchar(30),
+   DEPT varchar(10),
+   DESIG varchar(5),
+   GEN varchar(2),
+   SALARY integer,
+   CITY varchar(10)
+   );
+OUTPUT=> (A table as defined above is formed, if no error is met during the given command's execution.)
+
+2. Insert into EMP values (1,'DEEPIKA','SALES','MGR','F',55000,'DELHI');
+   Insert into EMP values (2,'GAGAN','ACCT','OPT','M',20000,'MUMBAI);
+   Insert into EMP values (3,'NEELAM','COMP','OPT','F','22000,'KOLKATA');
+   Insert into EMP values (4,'VIJAY','SALES','MGR','M',45000,'COCHIN');
+   Insert into EMP values (5,'SUNITHA','ACCT','OPT','F',18000,'CALICUT');
+   Insert into EMP values (5,'RAJESH','SALES','CLRK','M',48000,'CHENNAI');
+   Insert into EMP values (7,'KUNAL,'COMP','MGR','M',51000,'DELHI');
+OUTPUT=> (PASTE TABLE EMP BUT WITH The above stated empno)
+
+3. Update EMP set empno=6 where desig= 'sales';
+OUTPUT=> (PASTE TABLE EMP as it is)
+
+4 Select gen from emp where dept is not null; 
+OUTPUT=> |F|
+         |M|
+         |F|
+         |M|
+         |F|
+         |M|
+         |M|
+
+5. Select sum(salary) from emp where salary >= 45000;
+OUTPUT=> 199000
+
+TABLE3: COLLEGE
+
+1. Update COLLEGE set basic=10500 where date of join > 01/02/89 and age > 50;
+OUTPUT=> (2 n 4, change basic to 10500 and paste table college)
+
+2. Select Name, Age and Basic from COLLEGE where department in ('Physics','Chemistry'); 
+OUTPUT=> |  Yagyen  | 43 | 8500 |
+         | Pratyush | 34 | 7500 |
+         |  Reeta   | 27 | 9000 | 
+
+3. Delete from College where name= 'Shalaz';
+OUTPUT=>(same table but without 1st row)
+
+4. Insert into college values (11,'Saurav',50,'Biology','18/05/93',12000,'M');
+OUTPUT=> (able without no1 and add the above record at the end)
+
+5. select distinct(department) from college;
+
+TABLE4: EMPLOYEE
+
+1. select sum(Salary) from Employee where Zone='West';
+Output=> 122000
+
+2. select count(no) from employee where Grade is Null;
+Output=> 2
+
+3. select count(grade) from Employee;
+Output=> 5
+
+4. select zone, salary from Employee order by salary descending group by zone ;
+Output=> |  North  | 68000 |
+         |  North  | 66000 |
+         |  South  | 67000 |
+         | Central | 65000 |
+         |  West   | 62000 |
+         |  West   | 60000 |
+         |  East   | 62000 | 
+
+5. drop table employee;
+Output=> with this command, the table itself is dropped i.e. deleted from the database.
+
+
+
+
+   
+
